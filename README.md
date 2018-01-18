@@ -1,11 +1,1 @@
-# test
-# test
-# test
-# test
-# physcomp
-# physcomp
-# physcomp
-# physcomp
-# physcomp
-# physcomp
-# physcomp
+Documentation and code for all courses
