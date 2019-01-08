@@ -24,12 +24,13 @@ ATTINY85/45 pin 4 -> Arduino Uno pin 1
 
 #include <SoftwareSerial.h>
 // Definitions
-#define rxPin 3
-#define txPin 4
+#define rxPin 10 //3 for ATiny45/85
+#define txPin 9 //4 for ATiny45/85
 
 SoftwareSerial mySerial(rxPin, txPin);
 
-int sensorPin = 7; //ACTUALLY PIN LABELED AS "2" on the HLT tutorial
+//int sensorPin = 7; //uncomment if using ATtiny 45/85 - ACTUALLY PIN LABELED AS "2" on the HLT tutorial
+int sensorPin = A2; //uncomment if using ATtiny 44/84
 int sensorVal = -1;
 
 
@@ -37,6 +38,7 @@ int sensorVal = -1;
 void setup() {                
   pinMode(sensorPin, INPUT);
   mySerial.begin(9600);
+  mySerial.println("this is in the setup");
 }
 
 // the loop routine runs over and over asensorpingain forever:
