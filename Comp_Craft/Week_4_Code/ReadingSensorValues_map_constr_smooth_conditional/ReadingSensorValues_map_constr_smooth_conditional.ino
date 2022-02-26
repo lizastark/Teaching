@@ -85,18 +85,14 @@ void loop() {
   Serial.print("New = ");
   Serial.println(newSensorValue);
 
-  analogWrite(LEDpin, newSensorValue);
+  // conditional to turn off LED if new min value
+  // doesn't turn the LED all the way off
 
-  /*
-    // conditional to turn off LED if new min value
-    // doesn't turn the LED all the way off
-    // delete or comment out the analogWrite() above
-    if(newSensorValue > 31){
+  if (newSensorValue > 31) {
     analogWrite(LEDpin, newSensorValue);
-    } else if(newSensorValue < 30){
+  } else if (newSensorValue < 30) {
     analogWrite(LEDpin, 0);
-    }
-  */
+  }
 
 
   delay(1);
