@@ -33,7 +33,7 @@ int inputPin = A0;
 
 void setup() {
   // configure pins
-  pinMode(sensorPin, INPUT);
+  pinMode(sensorPin, INPUT_PULLUP);
   pinMode(LEDpin, INPUT);
 
   // initialize serial communication with computer:
