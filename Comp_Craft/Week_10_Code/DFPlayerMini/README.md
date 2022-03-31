@@ -4,8 +4,7 @@ The DFPlayer Mini plays audio files from an SD card using Software Serial librar
 
 ### Documentation
 - [DFPlayer Mini Wiki](https://wiki.dfrobot.com/DFPlayer_Mini_SKU_DFR0299): Read all of this
-- [Cheatsheet](https://reprage.com/post/dfplayer-mini-cheat-sheet](https://reprage.com/post/dfplayer-mini-cheat-sheet)
-
+- [Cheatsheet](https://reprage.com/post/dfplayer-mini-cheat-sheet)
 
 ### Benefits
 - Low cost (~$3-5)
