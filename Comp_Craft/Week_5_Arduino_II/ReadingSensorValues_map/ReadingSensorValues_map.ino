@@ -16,7 +16,7 @@ void loop() {
   Serial.print("Sensor val = ");
   Serial.print(sensorValue);
 
-  newSensorValue = map(sensorValue, 0, 1030, 0, 255);
+  newSensorValue = map(sensorValue, 30, 800, 0, 255);
   
   analogWrite(LEDpin, newSensorValue);
 

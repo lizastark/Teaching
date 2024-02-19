@@ -1,7 +1,7 @@
 /*
 
  Reading Sensor Values
- Comp Craft Spring 2013
+ Comp Craft Spring 2024
  
  This sketch reads the data coming in from the sensor and prints it to the serial
  monitor. This is extremely helpful to debug or find the range of values you 

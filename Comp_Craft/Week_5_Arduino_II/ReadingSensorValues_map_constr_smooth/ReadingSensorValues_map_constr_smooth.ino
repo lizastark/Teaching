@@ -22,7 +22,7 @@ int newSensorValue;
 // more the readings will be smoothed, but the slower the output will respond to
 // the input. Using a constant rather than a normal variable lets us use this
 // value to determine the size of the readings array.
-const int numReadings = 20;
+const int numReadings = 10;
 
 int readings[numReadings];      // the readings from the analog input
 int readIndex = 0;              // the index of the current reading
@@ -33,7 +33,7 @@ int inputPin = A0;
 
 void setup() {
   // configure pins
-  pinMode(sensorPin, INPUT);
+  pinMode(sensorPin, INPUT_PULLUP);
   pinMode(LEDpin, INPUT);
 
   // initialize serial communication with computer:
@@ -77,7 +77,7 @@ void loop() {
 
   //map the range from your average values to the range of
   //an LED output
-  newSensorValue = map(average, 100, 1030, 0, 255);
+  newSensorValue = map(average, 260, 800, 0, 255);
 
   //constrain the input range to LED output values
   newSensorValue = constrain(newSensorValue, 0, 255);
@@ -85,14 +85,18 @@ void loop() {
   Serial.print("New = ");
   Serial.println(newSensorValue);
 
-  // conditional to turn off LED if new min value
-  // doesn't turn the LED all the way off
+  analogWrite(LEDpin, newSensorValue);
 
-  if (newSensorValue > 31) {
+  /*
+    // conditional to turn off LED if new min value
+    // doesn't turn the LED all the way off
+    // delete or comment out the analogWrite() above
+    if(newSensorValue > 31){
     analogWrite(LEDpin, newSensorValue);
-  } else if (newSensorValue < 30) {
+    } else if(newSensorValue < 30){
     analogWrite(LEDpin, 0);
-  }
+    }
+  */
 
 
   delay(1);

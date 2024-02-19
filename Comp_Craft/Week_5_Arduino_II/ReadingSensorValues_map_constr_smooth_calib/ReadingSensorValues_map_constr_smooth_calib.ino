@@ -112,10 +112,10 @@ void loop() {
   // print the original average for debugging
   Serial.print("Average = ");
   Serial.print(average);
-  Serial.print("\t");
+  Serial.println("\t");
 
   // map the average value to the min and max we recorded above
-  average = map(average, sensorMin, sensorMax, 0, 255);
+  average = map(average, sensorMin, sensorMax, 0, 255); //change back to 255
 
   // constrain the values within a certain range
   average = constrain(average, 0, 255);

@@ -17,7 +17,7 @@ void loop() {
   Serial.print(sensorValue);
 
 
-  newSensorValue = map(sensorValue, 150, 1030, 0, 255);
+  newSensorValue = map(sensorValue, 80, 800, 0, 255);
 
   newSensorValue = constrain(newSensorValue, 0, 255);
   
