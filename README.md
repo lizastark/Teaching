@@ -1,1 +1,1 @@
-Documentation and code for all courses
+Documentation and code for all current courses
