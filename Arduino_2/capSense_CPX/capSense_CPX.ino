@@ -3,7 +3,7 @@
  Capacitive Sensing with Circuit Playground Express
  Comp Craft Spring 2025
  
- This sketch reads touch data coming in A2. If the value is above 600 (i.e. if it is being touched) the neopixel 
+ This sketch reads touch data coming in on pin 9 (i.e. A2). If the value is above 600 (i.e. if it is being touched) the neopixel 
  turns red. If it is below or not being touched, the LED turns blue. 
  
  */
