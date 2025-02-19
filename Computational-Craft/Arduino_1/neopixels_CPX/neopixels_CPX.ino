@@ -12,19 +12,17 @@
 void setup() {
   CircuitPlayground.begin(); //Required
   CircuitPlayground.clearPixels();
-  CircuitPlayground.strip.setBrightness(200); //255 is the max
+  CircuitPlayground.setBrightness(200); //255 is the max
 }
 
 void loop() {
 
   //one neopixel
-  CircuitPlayground.strip.setPixelColor(6, 0, 0, 255);
+  CircuitPlayground.setPixelColor(6, 0, 0, 255);
 
-  //multiple neopixels - first 4
-  for (int i = 0; i < 4; ++i) {
-    CircuitPlayground.strip.setPixelColor(i, 255, 0, 0);
-  }
+  // //multiple neopixels - first 4
+  // for (int i = 0; i < 4; ++i) {
+  //   CircuitPlayground.setPixelColor(i, 255, 0, 0);
+  // }
 
-  //You always have to show!
-  CircuitPlayground.strip.show();
 }
