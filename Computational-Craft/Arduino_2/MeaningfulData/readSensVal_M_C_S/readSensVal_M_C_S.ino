@@ -1,19 +1,19 @@
 /*
    READING SENSOR VALUES W/MAP, CONSTRAIN, + SMOOTHING
    Liza Stark
-   Updated Feb 2022
+   Updated Feb 2025
 
    This sketch reads a textile sensor and fades an LED based on the sensor value. It incorporates smoothing
    along with the map() and constrain() functions.
 
-   The sensor is attached to A0 through a 10k voltage divider.
+   The sensor is attached to A5 through a 10k voltage divider. If you choose to use INPUT_PULLUP, remember to 
+   update the logic so the LED brightens as you manipulate the sensor.
    The LED is on pin 9.
-
 
 */
 
 // variables to store pins + values of sensor and LED
-int sensorPin = A0;
+int sensorPin = A5;
 int sensorValue = 0;
 int LEDpin = 9;
 int newSensorValue;
@@ -33,7 +33,7 @@ int inputPin = A0;
 
 void setup() {
   // configure pins
-  pinMode(sensorPin, INPUT_PULLUP);
+  pinMode(sensorPin, INPUT);
   pinMode(LEDpin, INPUT);
 
   // initialize serial communication with computer:
@@ -77,7 +77,7 @@ void loop() {
 
   //map the range from your average values to the range of
   //an LED output
-  newSensorValue = map(average, 260, 800, 0, 255);
+  newSensorValue = map(average, 0, 1023, 0, 255);
 
   //constrain the input range to LED output values
   newSensorValue = constrain(newSensorValue, 0, 255);
@@ -85,18 +85,14 @@ void loop() {
   Serial.print("New = ");
   Serial.println(newSensorValue);
 
-  analogWrite(LEDpin, newSensorValue);
+  // conditional to turn off LED if new min value
+  // doesn't turn the LED all the way off
 
-  /*
-    // conditional to turn off LED if new min value
-    // doesn't turn the LED all the way off
-    // delete or comment out the analogWrite() above
-    if(newSensorValue > 31){
+  if (newSensorValue > 31) {
     analogWrite(LEDpin, newSensorValue);
-    } else if(newSensorValue < 30){
+  } else if (newSensorValue < 30) {
     analogWrite(LEDpin, 0);
-    }
-  */
+  }
 
 
   delay(1);

@@ -1,4 +1,18 @@
-int sensorPin = A0;
+/*
+   READING SENSOR VALUES W/MAP
+   Liza Stark
+   Updated Feb 2025
+
+   This sketch reads a textile sensor and fades an LED based on the sensor value. It incorporates the map() 
+   function.
+
+   The sensor is attached to A5 through a 10k voltage divider. If you choose to use INPUT_PULLUP, remember to 
+   update the logic so the LED brightens as you manipulate the sensor.
+   The LED is on pin 9.
+
+*/
+
+int sensorPin = A5;
 int sensorValue = 0;
 int LEDpin = 9;
 int newSensorValue;
@@ -16,12 +30,11 @@ void loop() {
   Serial.print("Sensor val = ");
   Serial.print(sensorValue);
 
-  newSensorValue = map(sensorValue, 30, 800, 0, 255);
-  
+  newSensorValue = map(sensorValue, 0, 1023, 0, 255);
+
   analogWrite(LEDpin, newSensorValue);
 
   Serial.print("\t");
   Serial.print("New sensor val = ");
   Serial.println(newSensorValue);
-
 }

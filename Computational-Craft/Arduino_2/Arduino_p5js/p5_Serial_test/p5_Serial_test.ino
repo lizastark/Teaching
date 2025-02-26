@@ -11,7 +11,7 @@
 
 */
 
-int sensorPin = A0;    // select the input pin for the sensor
+int sensorPin = A4;    // select the input pin for the sensor
 int sensorValue;  // variable to store the value coming from the sensor
 
 

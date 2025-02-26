@@ -10,7 +10,7 @@
  
  */
 
-int sensorPin = A0;   // select the input pin for the sensor
+int sensorPin = A5;   // select the input pin for the sensor
 int ledPin = 9;       // select the pin for the LED
 int sensorValue = 0;  // variable to store the value coming from the sensor
 
@@ -30,5 +30,6 @@ void loop() {
   analogWrite(ledPin, sensorValue);
 
   //Print the value to the Serial monitor
+  Serial.print("Sensor val = ");
   Serial.println(sensorValue);
 }
