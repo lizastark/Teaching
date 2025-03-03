@@ -9,7 +9,7 @@
 
 #include <Adafruit_CircuitPlayground.h>
 
-int touchSensor = 3; //A4 on CPX
+int touchSensor = A4; 
 int touchVal; //stores value of capacitve sensor
 
 void setup() {
@@ -18,6 +18,6 @@ void setup() {
 }
 
 void loop() {
-  touchVal = CircuitPlayground.readCap(touchSensor); // this sets each touch input and assigns a pin
+  touchVal = CircuitPlayground.readCap(touchSensor, 10); // this sets each touch input and assigns a pin
   Serial.println(touchVal);
 }
