@@ -1,7 +1,8 @@
 /*
    READING SENSOR VALUES W/MAP
    Liza Stark
-   Updated Feb 2025
+   Updated Feb 2026
+   Week 5
 
    This sketch reads a textile sensor and fades an LED based on the sensor value. It incorporates the map() 
    function.
